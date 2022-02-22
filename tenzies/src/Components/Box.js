@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import '../styles/box.css'
+import '../App.css';
+
 
 function Box(props){
 
@@ -8,17 +9,16 @@ function Box(props){
 
         backgroundColor : props.checked ? "aquamarine" : "white",
         borderStyle: "solid",
-        borderColor: "coral",
-        width : "50px",
-        height: "50px",
-
+        width : "60px",
+        height: "60px",
+        borderRadius: "10px",
+        fontWeight:"bold",
+        fontSize:"25px"
     }
 
     return(
-        <div style={style} className="boxes-items" onClick={props.handleClick}>
-            <div  className="box">
-              <p>{props.number}</p> 
-            </div>
+        <div style={style} className="box" onClick={props.handleClick}>
+              {props.number}
         </div>
     )
 

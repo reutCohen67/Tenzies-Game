@@ -4,7 +4,6 @@ export default [
         id:1,
         checked: false,
         Number: 5,
-        isFirst : false,
 
     },
     {
@@ -12,9 +11,6 @@ export default [
         id:2,
         checked: false,
         Number: 5,
-        isFirst : false,
-
-
 
     },
      {
@@ -22,8 +18,6 @@ export default [
         id:3,
         checked: false,
         Number: 6,
-        isFirst : false,
-
 
     },
     {
@@ -31,16 +25,12 @@ export default [
         id:4,
         checked: false,
         Number: 2,
-        isFirst : false,
-
-
     },
       {
     
         id:5,
         checked: false,
         Number: 2,
-        isFirst : false,
 
     },
       {
@@ -48,8 +38,6 @@ export default [
         id:6,
         checked: false,
         Number: 4,
-        isFirst : false,
-
 
     },
      {
@@ -57,8 +45,6 @@ export default [
         id:7,
         checked: false,
         Number: 2,
-        isFirst : false,
-
 
     },
       {
@@ -66,7 +52,7 @@ export default [
         id:8,
         checked: false,
         Number: 4,
-        isFirst : false,
+
 
     },
        {
@@ -74,8 +60,6 @@ export default [
         id:9,
         checked: false,
         Number: 1,
-        isFirst : false,
-
 
     },
        {
@@ -83,8 +67,6 @@ export default [
         id:10,
         checked: false,
         Number: 1,
-        isFirst : false,
-
 
     },
     

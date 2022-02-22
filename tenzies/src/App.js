@@ -16,11 +16,10 @@ const [isDone, setIsDone] = useState(false)
       setBoxes(prevBoxes => {
         return prevBoxes.map((box) =>{
            let num = Math.floor(Math.random() * 6)+1;
-           return firstNum !== box.Number ? {...box, Number: num} : {...box}
+           return box.checked  ? {...box} : {...box, Number: num}
         })
   })
   }
-   
 
 function handleClick(id){
   setBoxes(prevBoxes => {
@@ -31,15 +30,15 @@ function handleClick(id){
               setIsFirstClick(true)
               return (
                 {...box, 
-                  checked:!box.checked,
+                  checked:true,
                 }
               );
             }
 
-          if(box.Number === firstNum) {
+          if(box.Number === firstNum)  {
           return (
             {...box, 
-              checked:!box.checked,
+              checked:true,
             }
           );
           }
@@ -65,30 +64,42 @@ function is(){
 function handleReset(){
   setBoxes(prevBoxes=>{
     return prevBoxes.map(box=>{
+      let num = Math.floor(Math.random() * 6)+1;
       return {
-        ...box, Number:0, checked:false
+        ...box, Number:num, checked:false
       }
     })
   })
   setIsDone(false)
+  setFirstNum(0)
 }
+
+console.log(boxes)
 
   return (
     <div className="App">
+      <div className="container">
       <h1>Tenzies</h1>
       <h4>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h4>
+      <div className="boxes-items">
       {
         boxes.map(box=>(
           <Box key={box.id} id={box.id} checked={box.checked} number={box.Number} handleClick={() => handleClick(box.id)}/>
         )
           )
       } 
-      {isDone?
-      <button onClick={handleReset}>Reset Game</button>
-       :
-      <button onClick={handleRoll}>Roll</button>
-      }
+      </div>
 
+      <div className="btns">
+          {isDone?
+          <button className="btn" onClick={handleReset}>Reset Game</button>
+          :
+          <button className="btn" onClick={handleRoll}>Roll</button>
+          }
+      </div>
+
+      
+      </div>
     </div>
   );
 }

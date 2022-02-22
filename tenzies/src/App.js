@@ -3,7 +3,6 @@ import './App.css';
 import BoxList from './Components/BoxList';
 
 import Box from './Components/Box';
-import Boxes from './Components/Boxes';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -63,6 +62,17 @@ function is(){
 }
 
 
+function handleReset(){
+  setBoxes(prevBoxes=>{
+    return prevBoxes.map(box=>{
+      return {
+        ...box, Number:0, checked:false
+      }
+    })
+  })
+  setIsDone(false)
+}
+
   return (
     <div className="App">
       <h1>Tenzies</h1>
@@ -73,8 +83,12 @@ function is(){
         )
           )
       } 
-      
-      <button onClick={handleRoll}>{isDone ? "Reset Game" : "Roll"}</button>
+      {isDone?
+      <button onClick={handleReset}>Reset Game</button>
+       :
+      <button onClick={handleRoll}>Roll</button>
+      }
+
     </div>
   );
 }
